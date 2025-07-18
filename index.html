@@ -9,17 +9,106 @@
 <body>
     <div id="app"></div>
     
-    <!-- External Libraries -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- External Libraries - Fixed versions -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide React - Fixed -->
+    <script>
+        // Define lucide icons manually to avoid import issues
+        window.lucideReact = {
+            Plus: (props) => React.createElement('svg', {
+                ...props,
+                width: props.size || 24,
+                height: props.size || 24,
+                viewBox: '0 0 24 24',
+                fill: 'none',
+                stroke: 'currentColor',
+                strokeWidth: 2,
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round'
+            }, 
+                React.createElement('path', {d: 'M12 5v14M5 12h14'})
+            ),
+            Trash2: (props) => React.createElement('svg', {
+                ...props,
+                width: props.size || 24,
+                height: props.size || 24,
+                viewBox: '0 0 24 24',
+                fill: 'none',
+                stroke: 'currentColor',
+                strokeWidth: 2,
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round'
+            }, 
+                React.createElement('path', {d: 'M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2'}),
+                React.createElement('path', {d: 'M10 11v6m4-6v6'})
+            ),
+            Calculator: (props) => React.createElement('svg', {
+                ...props,
+                width: props.size || 24,
+                height: props.size || 24,
+                viewBox: '0 0 24 24',
+                fill: 'none',
+                stroke: 'currentColor',
+                strokeWidth: 2,
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round'
+            }, 
+                React.createElement('rect', {x: 4, y: 2, width: 16, height: 20, rx: 2}),
+                React.createElement('path', {d: 'M8 6h8M8 10h8M8 14h2M8 18h2m4-4h2m-2 4h2'})
+            ),
+            Target: (props) => React.createElement('svg', {
+                ...props,
+                width: props.size || 24,
+                height: props.size || 24,
+                viewBox: '0 0 24 24',
+                fill: 'none',
+                stroke: 'currentColor',
+                strokeWidth: 2,
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round'
+            }, 
+                React.createElement('circle', {cx: 12, cy: 12, r: 10}),
+                React.createElement('circle', {cx: 12, cy: 12, r: 6}),
+                React.createElement('circle', {cx: 12, cy: 12, r: 2})
+            ),
+            Activity: (props) => React.createElement('svg', {
+                ...props,
+                width: props.size || 24,
+                height: props.size || 24,
+                viewBox: '0 0 24 24',
+                fill: 'none',
+                stroke: 'currentColor',
+                strokeWidth: 2,
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round'
+            }, 
+                React.createElement('path', {d: 'M22 12h-4l-3 9L9 3l-3 9H2'})
+            ),
+            LogOut: (props) => React.createElement('svg', {
+                ...props,
+                width: props.size || 24,
+                height: props.size || 24,
+                viewBox: '0 0 24 24',
+                fill: 'none',
+                stroke: 'currentColor',
+                strokeWidth: 2,
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round'
+            }, 
+                React.createElement('path', {d: 'M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'}),
+                React.createElement('polyline', {points: '16,17 21,12 16,7'}),
+                React.createElement('path', {d: 'M21 12H9'})
+            )
+        };
+    </script>
     
     <!-- Our App Files -->
     <script src="auth.js"></script>
     <script src="data.js"></script>
-    <script type="text/babel" src="components.js"></script>
     <script type="text/babel" src="app.js"></script>
 </body>
 </html>
