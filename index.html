@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNA CHO Loading Plan</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .app-hidden { display: none !important; }
+        .password-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+        .password-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+        .password-button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .password-button:hover { background: #2563eb; }
+        .error-message {
+            color: #ef4444;
+            margin-top: 0.5rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Protection Screen -->
+    <div id="password-overlay" class="password-overlay">
+        <div class="password-form">
+            <h1 style="color: #1f2937; font-size: 2rem; margin-bottom: 0.5rem;">🏃‍♂️ TNA CHO Loading Plan</h1>
+            <p style="color: #6b7280; margin-bottom: 1.5rem;">Enter password to access your nutrition planning tool</p>
+            
+            <input 
+                type="password" 
+                id="password-input" 
+                placeholder="Enter password"
+                class="password-input"
+            />
+            <button onclick="checkPassword()" class="password-button">
+                Access App
+            </button>
+            <div id="error-message" class="error-message">
+                ❌ Incorrect password. Please try again.
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App (Hidden until password is correct) -->
+    <div id="main-app" class="app-hidden">
+        <div id="react-app"></div>
+    </div>
+
+    <script>
+        // 🔐 CHANGE THIS PASSWORD TO WHATEVER YOU WANT
+        const CORRECT_PASSWORD = "CHOLoading2024";
+        
+        function checkPassword() {
+            const passwordInput = document.getElementById('password-input');
+            const errorMessage = document.getElementById('error-message');
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredPassword === CORRECT_PASSWORD) {
+                // Correct password - hide overlay and show app
+                document.getElementById('password-overlay').style.display = 'none';
+                document.getElementById('main-app').classList.remove('app-hidden');
+                
+                // Load the React app
+                loadReactApp();
+            } else {
+                // Wrong password - show error
+                errorMessage.style.display = 'block';
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        }
+        
+        // Allow Enter key to submit password
+        document.getElementById('password-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        // Focus on password input when page loads
+        window.addEventListener('load', function() {
+            document.getElementById('password-input').focus();
+        });
+        
+        function loadReactApp() {
+            // This will load your CHO Loading app
+            ReactDOM.render(React.createElement(CHOLoadingApp), document.getElementById('react-app'));
+        }
+    </script>
+
+    <script type="text/babel">
+        // Simple placeholder app for now
+        const CHOLoadingApp = () => {
+            return (
+                <div style={{ 
+                    minHeight: '100vh', 
+                    background: 'linear-gradient(to bottom right, #dbeafe, #dcfce7)', 
+                    padding: '2rem' 
+                }}>
+                    <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+                        <div style={{ 
+                            background: 'white', 
+                            borderRadius: '1rem', 
+                            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', 
+                            padding: '3rem', 
+                            textAlign: 'center' 
+                        }}>
+                            <h1 style={{ 
+                                fontSize: '3rem', 
+                                fontWeight: 'bold', 
+                                color: '#1f2937', 
+                                marginBottom: '1rem' 
+                            }}>
+                                🏃‍♂️ TNA CHO Loading Plan
+                            </h1>
+                            <h2 style={{ 
+                                fontSize: '1.5rem', 
+                                color: '#6b7280', 
+                                marginBottom: '2rem' 
+                            }}>
+                                Your Complete Carbohydrate Loading Planning Tool
+                            </h2>
+                            
+                            <div style={{ 
+                                background: '#dbeafe', 
+                                padding: '1.5rem', 
+                                borderRadius: '0.5rem', 
+                                marginBottom: '2rem' 
+                            }}>
+                                <p style={{ color: '#1e40af', fontSize: '1.1rem', margin: 0 }}>
+                                    ✅ Password Protection: <strong>ACTIVE</strong><br/>
+                                    🔧 Status: Basic version loaded<br/>
+                                    📊 Full CHO Loading App: Ready to install
+                                </p>
+                            </div>
+                            
+                            <div style={{ 
+                                background: '#f3f4f6', 
+                                padding: '1.5rem', 
+                                borderRadius: '0.5rem' 
+                            }}>
+                                <p style={{ color: '#374151', margin: 0 }}>
+                                    This is your secure, password-protected CHO loading planner.<br/>
+                                    Ready for the complete app with all 125 foods and meal planning features!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+    </script>
+</body>
+</html>
