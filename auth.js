@@ -1,12 +1,12 @@
 class AuthManager {
     constructor() {
         this.isAuthenticated = false;
-        // This would normally come from a secure server endpoint
+        this.reactRoot = null;
         this.init();
     }
 
     init() {
-        // Check if user is already authenticated (session storage)
+        // Check if user is already authenticated
         const session = sessionStorage.getItem('tna_auth_session');
         if (session) {
             const sessionData = JSON.parse(session);
@@ -20,40 +20,20 @@ class AuthManager {
     }
 
     isValidSession(sessionData) {
-        // Check if session is less than 8 hours old
         const now = Date.now();
         const sessionAge = now - sessionData.timestamp;
         return sessionAge < (8 * 60 * 60 * 1000); // 8 hours
     }
 
     async authenticate(password) {
-        // This would normally be a secure server call
-        // For demo purposes, we'll use a simple check
-        const correctPassword = await this.getPasswordHash();
-        const inputHash = await this.hashPassword(password);
-        
-        if (inputHash === correctPassword) {
+        // Simple password check for demo
+        if (password === "CHOLoading2024") {
             this.isAuthenticated = true;
             this.createSession();
             this.showApp();
             return true;
         }
         return false;
-    }
-
-    async getPasswordHash() {
-        // This would come from a secure server
-        // For demo: "CHOLoading2024" hashed
-        return "a8b847e6d5c8d72b5e7f9c1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z7";
-    }
-
-    async hashPassword(password) {
-        // Simple hash for demo - in production use proper hashing
-        const encoder = new TextEncoder();
-        const data = encoder.encode(password + "tna_salt_2024");
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     }
 
     createSession() {
@@ -93,13 +73,11 @@ class AuthManager {
             </div>
         `;
 
-        // Add event listeners
         document.getElementById('login-button').addEventListener('click', this.handleLogin.bind(this));
         document.getElementById('password-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.handleLogin();
         });
         
-        // Focus on input
         setTimeout(() => {
             document.getElementById('password-input').focus();
         }, 100);
@@ -126,20 +104,28 @@ class AuthManager {
 
     showApp() {
         document.getElementById('app').innerHTML = '<div id="react-app"></div>';
-        // Load the React app
-        if (window.CHOLoadingApp) {
-            ReactDOM.render(React.createElement(CHOLoadingApp), document.getElementById('react-app'));
+        
+        // Use React 18 createRoot instead of render
+        if (this.reactRoot) {
+            this.reactRoot.unmount();
         }
+        
+        const container = document.getElementById('react-app');
+        this.reactRoot = ReactDOM.createRoot(container);
+        this.reactRoot.render(React.createElement(CHOLoadingApp));
     }
 
     logout() {
         sessionStorage.removeItem('tna_auth_session');
         this.isAuthenticated = false;
+        if (this.reactRoot) {
+            this.reactRoot.unmount();
+            this.reactRoot = null;
+        }
         this.showLogin();
     }
 }
 
-// Initialize auth when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.authManager = new AuthManager();
 });
