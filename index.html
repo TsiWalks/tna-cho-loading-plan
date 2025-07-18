@@ -93,78 +93,27 @@
                 2: { breakfast: [], snack1: [], lunch: [], snack2: [], dinner: [], snack3: [] }
             });
 
+            // Sample foods database (working version with proper formatting)
             const baseFoodsDatabase = [
                 { name: "1 x Thick slice raisin toast", carbs: 38, energyKJ: 865, energyKcal: 207, protein: 6, fat: 1, fibre: 2 },
-                { name: "1 x slice Dave's Killer Bread - Raisin the roof 🇺🇸", carbs: 19, energyKJ: 376, energyKcal: 90, protein: 3, fat: 1.5, fibre: 2 },
                 { name: "1 x regular slice white bread", carbs: 15, energyKJ: 330, energyKcal: 79, protein: 3, fat: 0.6, fibre: 1 },
                 { name: "1 x square crumpet", carbs: 26, energyKJ: 528, energyKcal: 125, protein: 3, fat: 0.5, fibre: 1.5 },
                 { name: "English muffin (white)", carbs: 28, energyKJ: 683, energyKcal: 163, protein: 7.4, fat: 1.5, fibre: 2.3 },
-                { name: "English muffin (fruit)", carbs: 32, energyKJ: 725, energyKcal: 175, protein: 6.8, fat: 1.4, fibre: 2.5 },
                 { name: "Bagel (white) 120g", carbs: 61, energyKJ: 1315, energyKcal: 315, protein: 11.4, fat: 1.7, fibre: 3.7 },
-                { name: "Bagel (fruit) 120g", carbs: 56, energyKJ: 1205, energyKcal: 288, protein: 10, fat: 1.5, fibre: 3.8 },
-                { name: "1 x slice, 7 Grain Bread", carbs: 17.5, energyKJ: 397.48, energyKcal: 95, protein: 3, fat: 1.5, fibre: 1.5 },
-                { name: "½ cup Quick oats (40g)", carbs: 24, energyKJ: 660, energyKcal: 158, protein: 5.3, fat: 3.8, fibre: 4 },
-                { name: "1 x Quick oats sachet (honey) Uncle Toby's 34g 🇦🇺", carbs: 23, energyKJ: 560, energyKcal: 133, protein: 3.3, fat: 2.5, fibre: 2 },
-                { name: "1 cup (36g), Coco Puffs, Cereal", carbs: 29, energyKJ: 585.76, energyKcal: 140, protein: 2, fat: 2, fibre: 2 },
-                { name: "½ cup (22g) Kellogg's Crunchy Nut Corn Flakes 🇦🇺", carbs: 18, energyKJ: 378, energyKcal: 90, protein: 1.5, fat: 1, fibre: 0.6 },
-                { name: "60g Kellogg's Frosted Flakes 🇺🇸", carbs: 53, energyKJ: 920.48, energyKcal: 220, protein: 3, fat: 0, fibre: 1 },
-                { name: "250ml (1 cup/8 oz) milk (skim/non-fat) 0%", carbs: 14, energyKJ: 380, energyKcal: 90, protein: 9.4, fat: 0, fibre: 0 },
-                { name: "250ml (1 cup/8 oz) milk, 1%", carbs: 13, energyKJ: 506, energyKcal: 121, protein: 9.4, fat: 3.1, fibre: 0 },
-                { name: "250ml (1 cup/8 oz) milk, 2%", carbs: 12, energyKJ: 540, energyKcal: 129, protein: 8.8, fat: 5, fibre: 0 },
-                { name: "250ml (1 cup/8 oz) whole milk (full cream) 4%", carbs: 15, energyKJ: 725, energyKcal: 173, protein: 9, fat: 9, fibre: 0 },
-                { name: "250ml (1 cup/ 8oz) soy milk (VitaSoy Calcium fortified)", carbs: 14, energyKJ: 670, energyKcal: 160, protein: 8, fat: 7.5, fibre: 1.5 },
-                { name: "250ml (1 cup/8 oz), chocolate milk (full cream)", carbs: 29, energyKJ: 1004.16, energyKcal: 240, protein: 9, fat: 10, fibre: 2 },
-                { name: "250ml (1 cup/8 oz), chocolate milk (1%)", carbs: 29, energyKJ: 711.28, energyKcal: 170, protein: 8, fat: 3, fibre: 2 },
-                { name: "250ml (1 cup/8 oz), chocolate milk (2%)", carbs: 30, energyKJ: 786.592, energyKcal: 188, protein: 7, fat: 5, fibre: 2 },
-                { name: "1tbs half-and-half milk", carbs: 0.6, energyKJ: 84, energyKcal: 20, protein: 0.5, fat: 1.7, fibre: 0 },
-                { name: "1/4 avocado (40g/1.4oz.)", carbs: 0.1, energyKJ: 230, energyKcal: 55, protein: 0.6, fat: 5.2, fibre: 3 },
-                { name: "1tsp butter/margarine", carbs: 0, energyKJ: 145, energyKcal: 35, protein: 0, fat: 4, fibre: 0 },
-                { name: "1tb honey", carbs: 23, energyKJ: 375, energyKcal: 90, protein: 0, fat: 0, fibre: 0 },
-                { name: "1tsp sugar", carbs: 4.2, energyKJ: 71, energyKcal: 17, protein: 0, fat: 0, fibre: 0 },
-                { name: "1tbs jam (strawberry)", carbs: 19, energyKJ: 308, energyKcal: 74, protein: 0, fat: 0, fibre: 0.4 },
-                { name: "1tbs maple syrup", carbs: 18, energyKJ: 288, energyKcal: 70, protein: 0, fat: 0, fibre: 0 },
-                { name: "1tbs peanut butter", carbs: 3.5, energyKJ: 624, energyKcal: 150, protein: 5.5, fat: 12.4, fibre: 1.4 },
-                { name: "1 x Pancake (70g), made with pancake mix", carbs: 27, energyKJ: 570, energyKcal: 136, protein: 3.7, fat: 1.3, fibre: 0.7 },
                 { name: "1 Banana (medium)", carbs: 19, energyKJ: 385, energyKcal: 90, protein: 1.4, fat: 0, fibre: 2.2 },
-                { name: "Coffee - Small latte (made on soy milk)", carbs: 11, energyKJ: 485, energyKcal: 115, protein: 7.4, fat: 4, fibre: 1.5 },
-                { name: "Coffee - Small latte (full cream milk)", carbs: 12, energyKJ: 550, energyKcal: 130, protein: 9, fat: 5, fibre: 0 },
-                { name: "Coffee - Small latte (made on skim milk)", carbs: 12, energyKJ: 353, energyKcal: 84, protein: 9, fat: 0.2, fibre: 0 },
-                { name: "Recipe Database - CHO Loading Smoothie (dairy)", carbs: 115, energyKJ: 3000, energyKcal: 710, protein: 26, fat: 15, fibre: 8 },
-                { name: "Recipe Database - CHO Loading Smoothie (non-dairy)", carbs: 100, energyKJ: 1800, energyKcal: 430, protein: 3, fat: 0, fibre: 6 },
-                { name: "1 x Date scone (85g)", carbs: 50, energyKJ: 1150, energyKcal: 275, protein: 5.4, fat: 5.5, fibre: 3.5 },
-                { name: "2 tbsp. Almond Butter", carbs: 2.7, energyKJ: 820.064, energyKcal: 196, protein: 6.7, fat: 17.8, fibre: 3.3 },
-                { name: "49g Check Mix, Bagel Mix, 1.75 oz 🇺🇸", carbs: 37, energyKJ: 878.64, energyKcal: 210, protein: 4, fat: 6, fibre: 2 },
-                { name: "1 x Cinnamon Scroll (90g)", carbs: 55, energyKJ: 1265, energyKcal: 300, protein: 5.2, fat: 6, fibre: 1.2 },
-                { name: "1 x 28g packet, Goldfish Cheddar Cheese Crackers 🇺🇸", carbs: 19, energyKJ: 543.92, energyKcal: 130, protein: 3, fat: 4.5, fibre: 0 },
-                { name: "10 x Gummy Bears", carbs: 21.7, energyKJ: 364.008, energyKcal: 87, protein: 0, fat: 0, fibre: 0 },
-                { name: "1 x medium choc chip muffin (165g)", carbs: 86, energyKJ: 2800, energyKcal: 670, protein: 9, fat: 33, fibre: 1.3 },
+                { name: "1 cup white rice (cooked)", carbs: 68, energyKJ: 1290, energyKcal: 305, protein: 5.9, fat: 0.4, fibre: 1.5 },
+                { name: "1 cup cooked pasta", carbs: 42, energyKJ: 930, energyKcal: 222, protein: 8, fat: 2, fibre: 2.2 },
+                { name: "250ml skim milk", carbs: 12, energyKJ: 350, energyKcal: 84, protein: 8.5, fat: 0.3, fibre: 0 },
+                { name: "1 tbsp honey", carbs: 23, energyKJ: 375, energyKcal: 90, protein: 0, fat: 0, fibre: 0 },
                 { name: "1 x medium banana muffin (165g)", carbs: 84, energyKJ: 2300, energyKcal: 550, protein: 10, fat: 20, fibre: 2 },
-                { name: "1 x finger bun (80g)", carbs: 50, energyKJ: 1255, energyKcal: 300, protein: 7, fat: 7.5, fibre: 2 },
-                { name: "1 x hot cross bun (67g)", carbs: 33, energyKJ: 800, energyKcal: 191, protein: 4.6, fat: 4, fibre: 2.3 },
-                { name: "1/4 packet (25g) rice crackers (plain)", carbs: 18.8, energyKJ: 395, energyKcal: 94, protein: 2.4, fat: 0.8, fibre: 0.4 },
-                { name: "1 x 25g bag pretzels", carbs: 20, energyKJ: 405, energyKcal: 97, protein: 2, fat: 0.7, fibre: 1 },
-                { name: "1 x 22g Bar, Kellogg's Rice Krispy Treats, Original", carbs: 17, energyKJ: 376.56, energyKcal: 90, protein: 1, fat: 2, fibre: 0 },
-                { name: "1 King Size Mars Bar (80g)", carbs: 56, energyKJ: 1520, energyKcal: 363, protein: 2.9, fat: 13.5, fibre: 1.3 },
-                { name: "57g Nature's Bakery, Fig Bar, Raspberry 🇺🇸", carbs: 38, energyKJ: 836.8, energyKcal: 200, protein: 3, fat: 5, fibre: 3 },
-                { name: "100g The Natural Confectionery Co. Snakes 🇦🇺", carbs: 75, energyKJ: 1400, energyKcal: 335, protein: 3.4, fat: 1, fibre: 0 },
-                { name: "190g bag The Natural Confectionery Co. Snakes 🇦🇺", carbs: 144, energyKJ: 2660, energyKcal: 636, protein: 6.5, fat: 2, fibre: 0 }
+                { name: "Recipe Database - CHO Loading Smoothie (dairy)", carbs: 115, energyKJ: 3000, energyKcal: 710, protein: 26, fat: 15, fibre: 8 },
+                { name: "600ml Gatorade/Powerade bottle", carbs: 36, energyKJ: 620, energyKcal: 148, protein: 0, fat: 0, fibre: 0 },
+                { name: "2 cups white rice (cooked)", carbs: 137, energyKJ: 2580, energyKcal: 617, protein: 11.8, fat: 0.7, fibre: 3 },
+                { name: "1 Large Turkish Bread Roll (160g)", carbs: 73, energyKJ: 1655, energyKcal: 395, protein: 12.5, fat: 4.5, fibre: 5.7 }
             ];
 
-            // Custom foods state
-            const [customFoods, setCustomFoods] = useState(() => {
-                try {
-                    const saved = localStorage?.getItem('customFoods');
-                    return saved ? JSON.parse(saved) : [];
-                } catch { return []; }
-            });
-
+            const [customFoods, setCustomFoods] = useState([]);
             const foodsDatabase = [...baseFoodsDatabase, ...customFoods];
-
-            useEffect(() => {
-                try {
-                    localStorage?.setItem('customFoods', JSON.stringify(customFoods));
-                } catch { }
-            }, [customFoods]);
 
             const addCustomFood = (newFood) => {
                 setCustomFoods(prev => [...prev, { ...newFood, isCustom: true }]);
@@ -237,9 +186,7 @@
                         <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
                             <div className="flex items-center justify-between mb-4">
                                 <div>
-                                    <h1 className="text-3xl font-bold text-gray-800 mb-2">
-                                        🏃‍♂️ TNA CHO Loading Plan
-                                    </h1>
+                                    <h1 className="text-3xl font-bold text-gray-800 mb-2">🏃‍♂️ TNA CHO Loading Plan</h1>
                                     <h2 className="text-xl text-gray-600">Carbohydrate Loading Plan</h2>
                                 </div>
                                 <div className="flex gap-2">
@@ -290,31 +237,235 @@
                                     <h4 className="font-semibold text-gray-800 text-sm mb-1">Carbohydrates</h4>
                                     <div className="text-lg font-bold text-gray-900">{totals.carbs.toFixed(1)} g</div>
                                     <div className="text-xs text-gray-600">Target: {targets.carbs.min.toFixed(0)}-{targets.carbs.max.toFixed(0)} g</div>
-                                    <div className="text-xs text-gray-500 mt-1">Target 7-12 g/Kg lean mass</div>
                                 </div>
                                 <div className={`p-4 rounded-lg border-2 ${totals.energyKJ >= targets.energy.min && totals.energyKJ <= targets.energy.max ? 'border-green-200 bg-green-50' : 'border-orange-200 bg-orange-50'}`}>
                                     <h4 className="font-semibold text-gray-800 text-sm mb-1">Energy</h4>
                                     <div className="text-lg font-bold text-gray-900">{totals.energyKJ.toFixed(0)} kJ</div>
                                     <div className="text-xs text-gray-600">Target: {targets.energy.min.toFixed(0)}-{targets.energy.max.toFixed(0)} kJ</div>
-                                    <div className="text-xs text-gray-500 mt-1">Target 225-250 kJ/Kg total mass</div>
+                                </div>
+                                <div className={`p-4 rounded-lg border-2 ${totals.protein >= targets.protein.min && totals.protein <= targets.protein.max ? 'border-green-200 bg-green-50' : 'border-orange-200 bg-orange-50'}`}>
+                                    <h4 className="font-semibold text-gray-800 text-sm mb-1">Protein</h4>
+                                    <div className="text-lg font-bold text-gray-900">{totals.protein.toFixed(1)} g</div>
+                                    <div className="text-xs text-gray-600">Target: {targets.protein.min.toFixed(1)}-{targets.protein.max.toFixed(1)} g</div>
+                                </div>
+                                <div className={`p-4 rounded-lg border-2 ${totals.fibre <= 30 ? 'border-green-200 bg-green-50' : 'border-orange-200 bg-orange-50'}`}>
+                                    <h4 className="font-semibold text-gray-800 text-sm mb-1">Fibre</h4>
+                                    <div className="text-lg font-bold text-gray-900">{totals.fibre.toFixed(1)} g</div>
+                                    <div className="text-xs text-gray-600">Target: &lt;30 g</div>
+                                </div>
+                                <div className={`p-4 rounded-lg border-2 ${totals.fat <= 80 ? 'border-green-200 bg-green-50' : 'border-orange-200 bg-orange-50'}`}>
+                                    <h4 className="font-semibold text-gray-800 text-sm mb-1">Fat</h4>
+                                    <div className="text-lg font-bold text-gray-900">{totals.fat.toFixed(1)} g</div>
+                                    <div className="text-xs text-gray-600">Target: &lt;80 g</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-xl shadow-lg p-6">
-                            <h3 className="text-xl font-bold text-gray-800 mb-4">🎉 TNA CHO Loading Plan - Version 1.0 Deployed!</h3>
-                            <div className="bg-green-50 p-4 rounded-lg mb-4">
-                                <p className="text-green-800">✅ Password protection: ACTIVE</p>
-                                <p className="text-green-800">✅ Full functionality: LOADED (50+ foods sample)</p>
-                                <p className="text-green-800">✅ Secure hosting: GitHub Pages</p>
-                                <p className="text-green-800">✅ URL: https://tsiwalks.github.io/tna-cho-loading-plan/</p>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div className="space-y-6">
+                                {Object.keys(meals[activeDay]).map(mealType => (
+                                    <MealSection
+                                        key={mealType}
+                                        mealType={mealType}
+                                        items={meals[activeDay][mealType]}
+                                        foodsDatabase={foodsDatabase}
+                                        onAddFood={addFoodItem}
+                                        onRemoveFood={removeFoodItem}
+                                        onAddCustomFood={addCustomFood}
+                                    />
+                                ))}
                             </div>
-                            <div className="text-gray-600">
-                                <p><strong>What's working:</strong> Body mass input, unit conversion, target calculations, food selection, meal planning</p>
-                                <p><strong>Your password:</strong> CHOLoading2024</p>
-                                <p><strong>Ready for V1.1:</strong> Food editing, export features, timing system</p>
+
+                            <div className="lg:sticky lg:top-4 h-fit">
+                                <div className="bg-white rounded-xl shadow-lg p-6">
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4">Day {activeDay} Summary</h3>
+                                    <div className="space-y-3">
+                                        <div className="flex justify-between">
+                                            <span>Carbohydrates:</span>
+                                            <span className="font-bold">{totals.carbs.toFixed(1)} g</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Energy:</span>
+                                            <span className="font-bold">{totals.energyKJ.toFixed(0)} kJ</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Energy:</span>
+                                            <span className="font-bold">{totals.energyKcal.toFixed(0)} kcal</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Protein:</span>
+                                            <span className="font-bold">{totals.protein.toFixed(1)} g</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Fat:</span>
+                                            <span className="font-bold">{totals.fat.toFixed(1)} g</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Fibre:</span>
+                                            <span className="font-bold">{totals.fibre.toFixed(1)} g</span>
+                                        </div>
+                                    </div>
+                                    <hr className="my-4" />
+                                    <div className="space-y-2 text-sm">
+                                        <div className="flex justify-between">
+                                            <span>CHO per kg lean mass:</span>
+                                            <span className={ratios.carbsPerKgLean >= 7 && ratios.carbsPerKgLean <= 12 ? 'text-green-600 font-bold' : 'text-orange-600 font-bold'}>
+                                                {ratios.carbsPerKgLean.toFixed(1)} g/kg
+                                            </span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Energy per kg total mass:</span>
+                                            <span className={ratios.energyPerKgTotal >= 225 && ratios.energyPerKgTotal <= 250 ? 'text-green-600 font-bold' : 'text-orange-600 font-bold'}>
+                                                {ratios.energyPerKgTotal.toFixed(0)} kJ/kg
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const MealSection = ({ mealType, items, foodsDatabase, onAddFood, onRemoveFood, onAddCustomFood }) => {
+            const [selectedFood, setSelectedFood] = useState('');
+            const [quantity, setQuantity] = useState(1);
+            const [searchTerm, setSearchTerm] = useState('');
+            const [showAllFoods, setShowAllFoods] = useState(false);
+
+            const mealNames = {
+                breakfast: 'Breakfast',
+                snack1: 'Snack 1',
+                lunch: 'Lunch',
+                snack2: 'Snack 2',
+                dinner: 'Dinner',
+                snack3: 'Snack 3 (optional)'
+            };
+
+            const filteredFoods = searchTerm 
+                ? foodsDatabase.filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                : foodsDatabase;
+
+            const handleAddFood = () => {
+                const food = foodsDatabase.find(f => f.name === selectedFood);
+                if (food && quantity > 0) {
+                    onAddFood(mealType, food, quantity);
+                    setSelectedFood('');
+                    setQuantity(1);
+                    setSearchTerm('');
+                    setShowAllFoods(false);
+                }
+            };
+
+            return (
+                <div className="bg-white rounded-xl shadow-lg p-6">
+                    <h3 className="text-lg font-bold text-gray-800 mb-4">{mealNames[mealType]}</h3>
+                    
+                    <div className="space-y-4 mb-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="text-xs text-gray-500 bg-yellow-50 p-2 rounded">
+                            Debug: Total foods available: {foodsDatabase.length}
+                        </div>
+                        
+                        <div className="flex gap-2">
+                            <button
+                                onClick={() => {
+                                    setShowAllFoods(false);
+                                    setSearchTerm('');
+                                }}
+                                className={`px-3 py-2 rounded-md text-sm font-medium ${
+                                    !showAllFoods ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                }`}
+                            >
+                                Search Foods
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setShowAllFoods(true);
+                                    setSearchTerm('');
+                                }}
+                                className={`px-3 py-2 rounded-md text-sm font-medium ${
+                                    showAllFoods ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                }`}
+                            >
+                                Browse All Foods
+                            </button>
+                        </div>
+
+                        {!showAllFoods && (
+                            <input
+                                type="text"
+                                placeholder="Search foods..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                            />
+                        )}
+                        
+                        {(searchTerm || showAllFoods) && (
+                            <select
+                                value={selectedFood}
+                                onChange={(e) => setSelectedFood(e.target.value)}
+                                className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                size="8"
+                            >
+                                <option value="">Select from {filteredFoods.length} foods...</option>
+                                {filteredFoods.map((food, index) => (
+                                    <option key={index} value={food.name}>
+                                        {food.name} - CHO: {food.carbs}g, {food.energyKcal}kcal
+                                    </option>
+                                ))}
+                            </select>
+                        )}
+                        
+                        <div className="flex gap-2">
+                            <input
+                                type="number"
+                                step="0.1"
+                                min="0"
+                                value={quantity}
+                                onChange={(e) => setQuantity(parseFloat(e.target.value) || 1)}
+                                className="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                                placeholder="Quantity"
+                            />
+                            <button
+                                onClick={handleAddFood}
+                                disabled={!selectedFood}
+                                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-300"
+                            >
+                                Add
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="space-y-2">
+                        {items.map((item, index) => {
+                            const food = foodsDatabase.find(f => f.name === item.food);
+                            if (!food) return null;
+
+                            return (
+                                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <div className="flex-1">
+                                        <div className="font-medium text-gray-800">{food.name}</div>
+                                        <div className="text-sm text-gray-600">
+                                            Qty: {item.quantity} | CHO: {(food.carbs * item.quantity).toFixed(1)}g | Energy: {(food.energyKcal * item.quantity).toFixed(0)}kcal
+                                        </div>
+                                    </div>
+                                    <button
+                                        onClick={() => onRemoveFood(mealType, index)}
+                                        className="ml-2 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                                    >
+                                        Remove
+                                    </button>
+                                </div>
+                            );
+                        })}
+                        
+                        {items.length === 0 && (
+                            <div className="text-center text-gray-500 py-4">
+                                No foods added yet. Use the form above to add foods.
+                            </div>
+                        )}
                     </div>
                 </div>
             );
